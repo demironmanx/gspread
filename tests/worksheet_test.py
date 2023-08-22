@@ -120,6 +120,36 @@ class WorksheetTest(GspreadTest):
         self.assertEqual(values_with_merged, expected_merge)
 
     @pytest.mark.vcr()
+    def test_get_values_and_maintain_size(self):
+        self.sheet.resize(4, 4)
+        sheet_data = [
+            ["1", "3", "", ""],
+            ["2", "4", "", ""],
+            ["", "", "", ""],
+            ["", "", "", ""],
+        ]
+
+        self.sheet.update("A1:D4", sheet_data)
+
+        expected_without_maintain = [
+            ["1", "3"],
+            ["2", "4"],
+        ]
+
+        expected_with_maintain = [
+            ["1", "3", "", ""],
+            ["2", "4", "", ""],
+            ["", "", "", ""],
+            ["", "", "", ""],
+        ]
+
+        values_without_maintain = self.sheet.get_values()
+        values_with_maintain = self.sheet.get_values(maintain_size=True)
+
+        self.assertEqual(values_without_maintain, expected_without_maintain)
+        self.assertEqual(values_with_maintain, expected_with_maintain)
+
+    @pytest.mark.vcr()
     def test_update_acell(self):
         sg = self._sequence_generator()
         value = next(sg)
