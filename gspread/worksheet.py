@@ -366,8 +366,9 @@ class Worksheet:
         combine_merged_cells=False,
         value_render_option=None,
         date_time_render_option=None,
+        maintain_size=False,
     )
-    def get_values(self, range_name=None, combine_merged_cells=False, **kwargs):
+    def get_values(self, range_name=None, combine_merged_cells=False, maintain_size=False, **kwargs):
         """Returns a list of lists containing all values from specified range.
 
         By default values are returned as strings. See ``value_render_option``
@@ -438,6 +439,10 @@ class Worksheet:
 
             The default ``date_time_render_option`` is ``DateTimeOption.serial_number``.
         :type date_time_render_option: :namedtuple:`~gspread.utils.DateTimeOption`
+
+        :param bool maintain_size: (optional) If True, the returned values will
+            be padded with empty rows or columns so that it matches the size of
+            the range specified. Defaults to False.
 
         .. note::
 
