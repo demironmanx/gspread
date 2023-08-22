@@ -368,7 +368,9 @@ class Worksheet:
         date_time_render_option=None,
         maintain_size=False,
     )
-    def get_values(self, range_name=None, combine_merged_cells=False, maintain_size=False, **kwargs):
+    def get_values(
+        self, range_name=None, combine_merged_cells=False, maintain_size=False, **kwargs
+    ):
         """Returns a list of lists containing all values from specified range.
 
         By default values are returned as strings. See ``value_render_option``
