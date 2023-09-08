@@ -12,6 +12,19 @@ Features:
 -  Batching updates.
 
 
+V6 Migration Guide
+------------------
+
+Please find in the below page a complete Guide to update your code
+to be compliant with the new V6.x.y release.
+
+
+.. toctree::
+   :maxdepth: 1
+
+   migration_v6
+
+
 Installation
 ------------
 

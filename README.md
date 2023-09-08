@@ -17,6 +17,13 @@ Features:
 - Sharing and access control.
 - Batching updates.
 
+## V6 Migration guide
+
+The new v6 release will be out soon.
+
+Below is a migration guide to help you migrate
+you code for when the version will be out.
+
 ## Installation
 
 ```sh
