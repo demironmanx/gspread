@@ -36,3 +36,12 @@ When gspread v6.x.y is out can be updated to:
     client = gspread.service_account(http_client=gspread.http_client.BackOffHTTPClient)
 
 
+Python-3.7 end of life
+----------------------
+
+From release v6.x.y we do not support python-3.7 anymore.
+
+This python version has been deprecated since.
+
+In order to keep your code compatible please upgrade your python version.
+
