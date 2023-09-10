@@ -45,3 +45,38 @@ This python version has been deprecated since.
 
 In order to keep your code compatible please upgrade your python version.
 
+
+New method ``Worksheet.update()`` signature
+-------------------------------------------
+
+The method ``Worksheet.update()`` signature has changed.
+
+
+You can update your code when the new release v6 is out as follow:
+
+Current code using gspread v5.x.y
+
+.. code:: python
+
+    import gspread
+
+    client = gspread.service_account(client_factory=gspread.client.BackoffClient)
+
+    file = client.open("TestGspread")
+    file.sheet1.update("I7", "53")
+
+
+You can update your code right now by naming the parameters ``range_name`` and ``values``.
+
+This can be done from **gspread-5.11**:
+
+
+.. code:: python
+
+    import gspread
+
+    client = gspread.service_account(http_client=gspread.http_client.BackOffHTTPClient)
+
+    file = client.open("TestGspread")
+    file.sheet1.update(range_name="I7", values=[["54"]])
+
