@@ -25,7 +25,7 @@ For Bots: Using Service Account
 
 A service account is a special type of Google account intended to represent a non-human user that needs to authenticate and be authorized to access data in Google APIs [sic].
 
-Since it's a separate account, by default it does not have access to any spreadsheet until you share it with this account. Just like any other Google account.
+Since it's a separate account, by default it does not have access to any spreadsheet until you share it with this account. Just like any other Google account. (use service_account.json)
 
 Here's how to get one:
 
@@ -61,7 +61,7 @@ Remember the path to the downloaded credentials file. Also, in the next step you
 
 6. Very important! Go to your spreadsheet and share it with a *client_email* from the step above. Just like you do with any other Google account. If you don't do this, you'll get a ``gspread.exceptions.SpreadsheetNotFound`` exception when trying to access this spreadsheet from your application or a script.
 
-7. Move the downloaded file to ``~/.config/gspread/service_account.json``. Windows users should put this file to ``%APPDATA%\gspread\service_account.json``.
+7. Move the downloaded file to ``~/.config/gspread/service_account.json``. Windows users should put this file to ``%APPDATA%\Roaming\gspread\service_account.json``.
 
 8. Create a new Python file with this code:
 
@@ -138,7 +138,7 @@ There is also the option to pass credentials as a dictionary:
 For End Users: Using OAuth Client ID
 ------------------------------------
 
-This is the case where your application or a script is accessing spreadsheets on behalf of an end user. When you use this scenario, your application or a script will ask the end user (or yourself if you're running it) to grant access to the user's data.
+This is the case where your application or a script is accessing spreadsheets on behalf of an end user. When you use this scenario, your application or a script will ask the end user (or yourself if you're running it) to grant access to the user's data. (use credentials.json)
 
 1. :ref:`enable-api-access` if you haven't done it yet.
 #. Go to "APIs & Services > OAuth Consent Screen." Click the button for "Configure Consent Screen".
@@ -152,7 +152,7 @@ This is the case where your application or a script is accessing spreadsheets on
 #. Click "+ Create credentials" at the top, then select "OAuth client ID".
 #. Select "Desktop app", name the credentials and click "Create". Click "Ok" in the "OAuth client created" popup.
 #. Download the credentials by clicking the Download JSON button in "OAuth 2.0 Client IDs" section.
-#. Move the downloaded file to ``~/.config/gspread/credentials.json``. Windows users should put this file to ``%APPDATA%\gspread\credentials.json``.
+#. Move the downloaded file to ``~/.config/gspread/credentials.json``. Windows users should put this file to ``%APPDATA%\Roaming\gspread\credentials.json``.
 
 Create a new Python file with this code:
 
